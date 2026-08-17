@@ -9,16 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #00a8ff;
-            --primary-dark: #0077c5;
-            --sun-yellow: #fbc531;
-            --bg-main: #f0f9ff;
+            /* 霊夢イメージ：赤・紅白 */
+            --reimu-red: #e63946;
+            --reimu-dark: #b71c1c;
+            /* 魔理沙イメージ：黄・金・黒 */
+            --marisa-yellow: #f59e0b;
+            --marisa-gold: #d97706;
+            --marisa-black: #1e293b;
+            /* ベースカラー */
+            --bg-main: #fdfbf7;
             --card-bg: #ffffff;
-            --text-main: #0c2461;
-            --text-sub: #4a69bd;
-            --border-color: #bae6fd;
-            --shadow-sm: 0 4px 12px rgba(0, 168, 255, 0.08);
-            --shadow-md: 0 12px 28px -6px rgba(12, 36, 97, 0.12);
+            --text-main: #2d3748;
+            --text-sub: #64748b;
+            --border-color: #fecdd3;
+            --shadow-sm: 0 4px 12px rgba(230, 57, 70, 0.08);
+            --shadow-md: 0 12px 28px -6px rgba(30, 41, 59, 0.12);
         }
 
         * {
@@ -31,9 +36,9 @@
             font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
             background-color: var(--bg-main);
             background-image: 
-                radial-gradient(circle at 10% 10%, rgba(251, 197, 49, 0.25) 0%, transparent 40%),
-                radial-gradient(circle at 90% 20%, rgba(0, 168, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 90%, rgba(0, 210, 211, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 12% 12%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 88% 18%, rgba(230, 57, 70, 0.10) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
@@ -47,7 +52,7 @@
             left: 0;
             width: 100%;
             height: 65px;
-            background-color: rgba(255, 255, 255, 0.92);
+            background-color: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 2px solid var(--border-color);
             display: flex;
@@ -59,7 +64,7 @@
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 900;
-            color: var(--primary-dark);
+            color: var(--reimu-red);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -78,7 +83,7 @@
             transition: color 0.2s;
         }
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: var(--reimu-red);
         }
 
         .container {
@@ -105,13 +110,13 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: linear-gradient(90deg, var(--sun-yellow), var(--primary-blue), #00d2d3);
+            background: linear-gradient(90deg, var(--reimu-red), var(--marisa-yellow), var(--marisa-black));
         }
         .profile-icon {
             width: 96px;
             height: 96px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #00a8ff 0%, #0077c5 100%);
+            background: linear-gradient(135deg, var(--reimu-red) 0%, var(--marisa-yellow) 100%);
             margin: 0 auto 18px;
             display: flex;
             align-items: center;
@@ -119,7 +124,7 @@
             font-size: 2.2rem;
             font-weight: 900;
             color: #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 168, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
             border: 3px solid #ffffff;
         }
         .hero-title {
@@ -130,7 +135,7 @@
         }
         .hero-subtitle {
             font-size: 1.05rem;
-            color: var(--primary-dark);
+            color: var(--reimu-dark);
             font-weight: 800;
             margin-bottom: 14px;
         }
@@ -171,9 +176,9 @@
             fill: currentColor;
         }
 
-        .btn-yt { background: linear-gradient(135deg, #FF0000 0%, #cc0000 100%); }
-        .btn-nico { background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%); }
-        .btn-x { background: linear-gradient(135deg, #0f1419 0%, #000000 100%); }
+        .btn-yt { background: linear-gradient(135deg, #e63946 0%, #b71c1c 100%); }
+        .btn-nico { background: linear-gradient(135deg, #334155 0%, #1e293b 100%); }
+        .btn-x { background: linear-gradient(135deg, #0f172a 0%, #000000 100%); }
 
         /* 検索バーデザイン */
         .search-container {
@@ -200,19 +205,19 @@
             background-color: var(--bg-main);
         }
         .search-input:focus {
-            border-color: var(--primary-blue);
+            border-color: var(--reimu-red);
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 168, 255, 0.2);
+            box-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
         }
         .search-display {
             margin-top: 12px;
             font-size: 0.95rem;
             font-weight: 800;
-            color: var(--primary-dark);
+            color: var(--reimu-dark);
             min-height: 24px;
         }
         .search-display span {
-            color: #e67e22;
+            color: var(--marisa-gold);
             text-decoration: underline;
         }
 
@@ -231,7 +236,7 @@
             display: inline-block;
             width: 7px;
             height: 24px;
-            background: linear-gradient(180deg, var(--sun-yellow), var(--primary-blue));
+            background: linear-gradient(180deg, var(--reimu-red), var(--marisa-yellow));
             border-radius: 4px;
         }
 
@@ -246,11 +251,11 @@
             height: 8px;
         }
         .scroll-wrapper::-webkit-scrollbar-track {
-            background: #e0f2fe;
+            background: #ffe4e6;
             border-radius: 10px;
         }
         .scroll-wrapper::-webkit-scrollbar-thumb {
-            background: #7dd3fc;
+            background: #fca5a5;
             border-radius: 10px;
         }
 
@@ -270,7 +275,7 @@
         .video-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
-            border-color: var(--primary-blue);
+            border-color: var(--reimu-red);
         }
 
         .thumbnail-container {
@@ -298,7 +303,7 @@
             transform: translate(-50%, -50%);
             width: 48px;
             height: 48px;
-            background-color: rgba(255, 0, 0, 0.85);
+            background-color: rgba(230, 57, 70, 0.88);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -317,7 +322,7 @@
             margin-left: 3px;
         }
         .video-card:hover .play-icon {
-            background-color: #ff0000;
+            background-color: var(--reimu-red);
             transform: translate(-50%, -50%) scale(1.1);
         }
 
@@ -331,12 +336,12 @@
             align-self: flex-start;
             font-size: 0.75rem;
             font-weight: 800;
-            color: #0284c7;
-            background-color: #e0f2fe;
+            color: #991b1b;
+            background-color: #ffe4e6;
             padding: 4px 12px;
             border-radius: 12px;
             margin-bottom: 10px;
-            border: 1px solid #bae6fd;
+            border: 1px solid #fecdd3;
         }
         .card-title {
             font-size: 1rem;
