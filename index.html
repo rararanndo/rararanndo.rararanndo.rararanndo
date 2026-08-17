@@ -114,16 +114,21 @@
             background: linear-gradient(90deg, var(--reimu-red), var(--marisa-yellow), var(--marisa-black));
         }
 
-        /* プロフィール画像スタイル */
+        /* プロフィール画像スタイル（大きく・目立つように更新） */
         .profile-icon {
-            width: 110px;
-            height: 110px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 18px;
+            margin: 0 auto 20px;
             display: block;
-            box-shadow: 0 8px 20px rgba(224, 71, 71, 0.22);
-            border: 3px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(224, 71, 71, 0.25);
+            border: 4px solid #ffffff;
+            outline: 3px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .profile-icon:hover {
+            transform: scale(1.05);
         }
 
         .hero-title {
@@ -387,7 +392,6 @@
     <div class="container">
 
         <section class="hero-card" id="about">
-            <!-- プロフィール画像（icon.jpg に統一） -->
             <img src="icon.jpg" alt="ララランドアイコン" class="profile-icon">
             <h1 class="hero-title">ララランドのゆっくり実況</h1>
             <p class="hero-subtitle">楽しくてわかりやすい動画をお届け！</p>
