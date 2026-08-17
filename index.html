@@ -89,7 +89,6 @@
             padding: 20px 16px;
         }
 
-        /* ヒーローカードスタイル（バナー対応） */
         .hero-card {
             background: var(--card-bg);
             border-radius: 28px;
@@ -105,7 +104,7 @@
         /* YouTubeバナーエリア */
         .hero-banner-container {
             width: 100%;
-            height: 200px;
+            height: 220px;
             background-color: var(--border-color);
             overflow: hidden;
             position: relative;
@@ -121,17 +120,17 @@
             padding: 0 24px;
         }
 
-        /* プロフィール画像（バナーに少し重なるデザイン） */
+        /* プロフィール画像（ほどよい重なり感に調整） */
         .profile-icon {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin: -75px auto 16px;
+            margin: -50px auto 16px;
             display: block;
             position: relative;
             z-index: 2;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             border: 4px solid #ffffff;
             outline: 3px solid var(--border-color);
             transition: transform 0.3s ease;
@@ -144,21 +143,14 @@
         .hero-title {
             font-size: 2.1rem;
             font-weight: 900;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--text-main);
         }
         .hero-subtitle {
             font-size: 1.05rem;
             color: var(--reimu-dark);
             font-weight: 800;
-            margin-bottom: 14px;
-        }
-        .hero-desc {
-            font-size: 0.98rem;
-            color: var(--text-sub);
-            max-width: 620px;
-            margin: 0 auto 28px;
-            font-weight: 700;
+            margin-bottom: 24px;
         }
 
         .sns-grid {
@@ -402,7 +394,6 @@
     <div class="container">
 
         <section class="hero-card" id="about">
-            <!-- 追加：YouTubeバナー画像 -->
             <div class="hero-banner-container">
                 <img src="bana-.jpg" alt="YouTubeチャンネルバナー" class="hero-banner">
             </div>
@@ -411,10 +402,6 @@
                 <img src="icon.jpg" alt="ララランドアイコン" class="profile-icon">
                 <h1 class="hero-title">ララランドのゆっくり実況</h1>
                 <p class="hero-subtitle">楽しくてわかりやすい動画をお届け！</p>
-                <p class="hero-desc">
-                    ゆっくり実況やゲーム攻略動画を投稿しています。<br>
-                    以下のリンクからチャンネル登録＆フォローをよろしくお願いします！
-                </p>
                 
                 <div class="sns-grid">
                     <a href="https://www.youtube.com/channel/UCzJqo1AzojekLDx12fe2I3w" target="_blank" rel="noopener noreferrer" class="sns-btn btn-yt">
