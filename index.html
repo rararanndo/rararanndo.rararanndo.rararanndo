@@ -9,21 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 霊夢イメージ：赤・紅白 */
-            --reimu-red: #e63946;
-            --reimu-dark: #b71c1c;
-            /* 魔理沙イメージ：黄・金・黒 */
-            --marisa-yellow: #f59e0b;
-            --marisa-gold: #d97706;
-            --marisa-black: #1e293b;
-            /* ベースカラー */
-            --bg-main: #fdfbf7;
+            /* 画像に合わせたやわらかい朱赤・テラコッタ系 */
+            --reimu-red: #e04747;
+            --reimu-dark: #a82e2e;
+            /* 金髪・光の温かみを感じるイエローゴールド */
+            --marisa-yellow: #f2a93b;
+            --marisa-gold: #c97a22;
+            /* 帽子や服の柔らかなダークブラウン */
+            --marisa-black: #2e2626;
+            /* 全体背景：あたたかみのある生成り・アイボリー */
+            --bg-main: #fcf9f2;
             --card-bg: #ffffff;
-            --text-main: #2d3748;
-            --text-sub: #64748b;
-            --border-color: #fecdd3;
-            --shadow-sm: 0 4px 12px rgba(230, 57, 70, 0.08);
-            --shadow-md: 0 12px 28px -6px rgba(30, 41, 59, 0.12);
+            --text-main: #2b2525;
+            --text-sub: #6b5f5f;
+            --border-color: #f7d8cc;
+            --shadow-sm: 0 4px 12px rgba(224, 71, 71, 0.08);
+            --shadow-md: 0 12px 28px -6px rgba(46, 38, 38, 0.12);
         }
 
         * {
@@ -36,9 +37,9 @@
             font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif;
             background-color: var(--bg-main);
             background-image: 
-                radial-gradient(circle at 12% 12%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 88% 18%, rgba(230, 57, 70, 0.10) 0%, transparent 45%),
-                radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 12% 12%, rgba(242, 169, 59, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 88% 18%, rgba(224, 71, 71, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(242, 169, 59, 0.10) 0%, transparent 50%);
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
@@ -112,21 +113,19 @@
             height: 6px;
             background: linear-gradient(90deg, var(--reimu-red), var(--marisa-yellow), var(--marisa-black));
         }
+
+        /* プロフィール画像スタイル */
         .profile-icon {
-            width: 96px;
-            height: 96px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--reimu-red) 0%, var(--marisa-yellow) 100%);
+            object-fit: cover;
             margin: 0 auto 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+            display: block;
+            box-shadow: 0 8px 20px rgba(224, 71, 71, 0.22);
             border: 3px solid #ffffff;
         }
+
         .hero-title {
             font-size: 2.1rem;
             font-weight: 900;
@@ -176,9 +175,9 @@
             fill: currentColor;
         }
 
-        .btn-yt { background: linear-gradient(135deg, #e63946 0%, #b71c1c 100%); }
-        .btn-nico { background: linear-gradient(135deg, #334155 0%, #1e293b 100%); }
-        .btn-x { background: linear-gradient(135deg, #0f172a 0%, #000000 100%); }
+        .btn-yt { background: linear-gradient(135deg, #e04747 0%, #a82e2e 100%); }
+        .btn-nico { background: linear-gradient(135deg, #423838 0%, #2e2626 100%); }
+        .btn-x { background: linear-gradient(135deg, #2b2525 0%, #151010 100%); }
 
         /* 検索バーデザイン */
         .search-container {
@@ -207,7 +206,7 @@
         .search-input:focus {
             border-color: var(--reimu-red);
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
+            box-shadow: 0 0 10px rgba(224, 71, 71, 0.2);
         }
         .search-display {
             margin-top: 12px;
@@ -251,11 +250,11 @@
             height: 8px;
         }
         .scroll-wrapper::-webkit-scrollbar-track {
-            background: #ffe4e6;
+            background: #f7d8cc;
             border-radius: 10px;
         }
         .scroll-wrapper::-webkit-scrollbar-thumb {
-            background: #fca5a5;
+            background: #e04747;
             border-radius: 10px;
         }
 
@@ -303,7 +302,7 @@
             transform: translate(-50%, -50%);
             width: 48px;
             height: 48px;
-            background-color: rgba(230, 57, 70, 0.88);
+            background-color: rgba(224, 71, 71, 0.88);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -336,12 +335,12 @@
             align-self: flex-start;
             font-size: 0.75rem;
             font-weight: 800;
-            color: #991b1b;
-            background-color: #ffe4e6;
+            color: #a82e2e;
+            background-color: #fce8e3;
             padding: 4px 12px;
             border-radius: 12px;
             margin-bottom: 10px;
-            border: 1px solid #fecdd3;
+            border: 1px solid #f7d8cc;
         }
         .card-title {
             font-size: 1rem;
@@ -388,7 +387,8 @@
     <div class="container">
 
         <section class="hero-card" id="about">
-            <div class="profile-icon">ラ</div>
+            <!-- アップロード画像をプロフィールアイコンとして適用 -->
+            <img src="icon.png" alt="ララランドアイコン" class="profile-icon">
             <h1 class="hero-title">ララランドのゆっくり実況</h1>
             <p class="hero-subtitle">楽しくてわかりやすい動画をお届け！</p>
             <p class="hero-desc">
@@ -450,7 +450,6 @@
         <p>&copy; 2026 ララランドのゆっくり部屋 All Rights Reserved.</p>
     </footer>
 
-    <!-- スクリプト -->
     <script>
         const allVideos = [
             {
@@ -476,7 +475,6 @@
             }
         ];
 
-        // 動画カードHTMLを作成する関数
         function createCardHTML(video, badgeText) {
             return `
                 <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="video-card">
@@ -493,23 +491,19 @@
             `;
         }
 
-        // 初期表示（未入力時）の描画処理
         function renderDefaultVideos() {
-            // おすすめ動画（ランダム2件選出）
             const recContainer = document.getElementById('recommended-container');
             if (recContainer) {
                 const recList = [...allVideos].sort(() => 0.5 - Math.random()).slice(0, 2);
                 recContainer.innerHTML = recList.map(v => createCardHTML(v, 'おすすめ')).join('');
             }
 
-            // 影廊
             const kagerouContainer = document.getElementById('kagerou-container');
             if (kagerouContainer) {
                 const list = allVideos.filter(v => v.category === '影廊');
                 kagerouContainer.innerHTML = list.map(v => createCardHTML(v, v.category)).join('');
             }
 
-            // マイクラ
             const mcContainer = document.getElementById('mc-container');
             if (mcContainer) {
                 const list = allVideos.filter(v => v.category === 'マイクラ');
@@ -517,7 +511,6 @@
             }
         }
 
-        // 検索＆画面切り替え処理
         function handleSearch() {
             const query = document.getElementById('searchInput').value.trim();
             const displayEl = document.getElementById('searchDisplay');
@@ -526,17 +519,14 @@
             const searchResultsContainer = document.getElementById('search-results-container');
 
             if (query === "") {
-                // 検索文字がない場合はデフォルト表示に戻す
                 displayEl.innerHTML = "";
                 defaultSections.style.display = "block";
                 searchResultsSection.style.display = "none";
             } else {
-                // 検索文字がある場合はデフォルトセクションを消し、検索結果のみ表示
                 displayEl.innerHTML = `「<span>${escapeHTML(query)}</span>」の検索結果`;
                 defaultSections.style.display = "none";
                 searchResultsSection.style.display = "block";
 
-                // 該当動画の絞り込み
                 const filtered = allVideos.filter(v => 
                     v.title.toLowerCase().includes(query.toLowerCase()) || 
                     v.desc.toLowerCase().includes(query.toLowerCase()) ||
@@ -551,7 +541,6 @@
             }
         }
 
-        // HTMLエスケープ処理（安全対策）
         function escapeHTML(str) {
             return str.replace(/[&<>'"]/g, 
                 tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
