@@ -9,15 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 画像に合わせたやわらかい朱赤・テラコッタ系 */
             --reimu-red: #e04747;
             --reimu-dark: #a82e2e;
-            /* 金髪・光の温かみを感じるイエローゴールド */
             --marisa-yellow: #f2a93b;
             --marisa-gold: #c97a22;
-            /* 帽子や服の柔らかなダークブラウン */
             --marisa-black: #2e2626;
-            /* 全体背景：あたたかみのある生成り・アイボリー */
             --bg-main: #fcf9f2;
             --card-bg: #ffffff;
             --text-main: #2b2525;
@@ -93,10 +89,11 @@
             padding: 20px 16px;
         }
 
+        /* ヒーローカードスタイル（バナー対応） */
         .hero-card {
             background: var(--card-bg);
             border-radius: 28px;
-            padding: 40px 24px;
+            padding: 0 0 36px 0;
             text-align: center;
             box-shadow: var(--shadow-md);
             margin-bottom: 30px;
@@ -104,28 +101,41 @@
             position: relative;
             overflow: hidden;
         }
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, var(--reimu-red), var(--marisa-yellow), var(--marisa-black));
+
+        /* YouTubeバナーエリア */
+        .hero-banner-container {
+            width: 100%;
+            height: 200px;
+            background-color: var(--border-color);
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-banner {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
-        /* プロフィール画像スタイル（大きく・目立つように更新） */
+        .hero-body {
+            padding: 0 24px;
+        }
+
+        /* プロフィール画像（バナーに少し重なるデザイン） */
         .profile-icon {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 20px;
+            margin: -75px auto 16px;
             display: block;
-            box-shadow: 0 10px 25px rgba(224, 71, 71, 0.25);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
             border: 4px solid #ffffff;
             outline: 3px solid var(--border-color);
             transition: transform 0.3s ease;
+            background-color: #ffffff;
         }
         .profile-icon:hover {
             transform: scale(1.05);
@@ -392,29 +402,36 @@
     <div class="container">
 
         <section class="hero-card" id="about">
-            <img src="icon.jpg" alt="ララランドアイコン" class="profile-icon">
-            <h1 class="hero-title">ララランドのゆっくり実況</h1>
-            <p class="hero-subtitle">楽しくてわかりやすい動画をお届け！</p>
-            <p class="hero-desc">
-                ゆっくり実況やゲーム攻略動画を投稿しています。<br>
-                以下のリンクからチャンネル登録＆フォローをよろしくお願いします！
-            </p>
-            
-            <div class="sns-grid">
-                <a href="https://www.youtube.com/channel/UCzJqo1AzojekLDx12fe2I3w" target="_blank" rel="noopener noreferrer" class="sns-btn btn-yt">
-                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    YouTube
-                </a>
+            <!-- 追加：YouTubeバナー画像 -->
+            <div class="hero-banner-container">
+                <img src="bana-.jpg" alt="YouTubeチャンネルバナー" class="hero-banner">
+            </div>
 
-                <a href="https://www.nicovideo.jp/my?cmnhd_ref=device%3Dpc%26site%3Dniconico%26pos%3Dheader%26page%3Dtop" target="_blank" rel="noopener noreferrer" class="sns-btn btn-nico">
-                    <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v3l4-3h9c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H11.2L9 18.7V17H3V5h18v12z"/></svg>
-                    ニコニコ動画
-                </a>
+            <div class="hero-body">
+                <img src="icon.jpg" alt="ララランドアイコン" class="profile-icon">
+                <h1 class="hero-title">ララランドのゆっくり実況</h1>
+                <p class="hero-subtitle">楽しくてわかりやすい動画をお届け！</p>
+                <p class="hero-desc">
+                    ゆっくり実況やゲーム攻略動画を投稿しています。<br>
+                    以下のリンクからチャンネル登録＆フォローをよろしくお願いします！
+                </p>
+                
+                <div class="sns-grid">
+                    <a href="https://www.youtube.com/channel/UCzJqo1AzojekLDx12fe2I3w" target="_blank" rel="noopener noreferrer" class="sns-btn btn-yt">
+                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        YouTube
+                    </a>
 
-                <a href="https://x.com/G1ubvsIcps69070" target="_blank" rel="noopener noreferrer" class="sns-btn btn-x">
-                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    X (Twitter)
-                </a>
+                    <a href="https://www.nicovideo.jp/my?cmnhd_ref=device%3Dpc%26site%3Dniconico%26pos%3Dheader%26page%3Dtop" target="_blank" rel="noopener noreferrer" class="sns-btn btn-nico">
+                        <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v3l4-3h9c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H11.2L9 18.7V17H3V5h18v12z"/></svg>
+                        ニコニコ動画
+                    </a>
+
+                    <a href="https://x.com/G1ubvsIcps69070" target="_blank" rel="noopener noreferrer" class="sns-btn btn-x">
+                        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        X (Twitter)
+                    </a>
+                </div>
             </div>
         </section>
 
