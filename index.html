@@ -484,22 +484,37 @@
         // 復元したい時や動画を追加したい時は、この配列の中にオブジェクトを追加・コメント解除してください。
         const allVideos = [
             復元用データ
-            {
-                url: "https://youtu.be/6dApbShXljw",
-                id: "6dApbShXljw",
-                category: "影廊",
-                title: "影廊 実況プレイ",
-                desc: "恐怖の回廊に挑む実況動画です。"
-            },
-             {
-                url: "https://www.youtube.com/watch?v=6dApbShXljw",
-                id: "6dApbShXljw",
-                category: "影廊",
-                title: "影廊 実況プレイ",
-                desc: "恐怖の回廊に挑む実況動画です。"
-            },
-            
-        ];
+          const allVideos = [
+    {
+        url: "https://youtu.be/X7lLWlGDaXQ",
+        id: "X7lLWlGDaXQ",
+        category: "マイクラ",
+        title: "影廊 実況プレイ",
+        desc: "恐怖の回廊に挑む実況動画です。"
+    },
+    {
+        url: "https://youtu.be/sLycq_Q1kTs",
+        id: "sLycq_Q1kTs",
+        category: "マイクラ",
+        title: "マインクラフト実況 Part1",
+        desc: "マインクラフトの実況動画です。"
+    },
+    {
+        url: "https://youtu.be/D1fevqDzlaQ",
+        id: "D1fevqDzlaQ",
+        category: "マイクラ",
+        title: "マインクラフト実況 Part2",
+        desc: "マインクラフトの実況動画です。"
+    },
+    // 👇 ここから追加！
+    {
+        url: "https://youtu.be/6dApbShXljw",
+        id: "6dApbShXljw",
+        category: "マイクラ", // ← 動画に合わせたカテゴリー名
+        title: "ここに動画のタイトルを入力",
+        desc: "ここに動画の説明文を入力"
+    }
+];
 
         function createCardHTML(video, badgeText) {
             return `
