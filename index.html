@@ -107,7 +107,6 @@
             overflow: hidden;
         }
 
-        /* バナー表示エリア */
         .hero-banner-container {
             width: 100%;
             height: 220px;
@@ -128,7 +127,6 @@
             padding: 0 24px;
         }
 
-        /* プロフィール画像（ドラッグ・選択防止CSS適用） */
         .profile-icon {
             width: 140px;
             height: 140px;
@@ -209,7 +207,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* 検索バーデザイン */
         .search-container {
             background: var(--card-bg);
             border-radius: 20px;
@@ -480,10 +477,8 @@
     </footer>
 
     <script>
-        // 動画データ一覧
-        // 復元したい時や動画を追加したい時は、この配列の中にオブジェクトを追加・コメント解除してください。
+        // 動画データ一覧（復元完了）
         const allVideos = [
-            /* 復元用データ
             {
                 url: "https://youtu.be/X7lLWlGDaXQ",
                 id: "X7lLWlGDaXQ",
@@ -505,7 +500,6 @@
                 title: "マインクラフト実況 Part2",
                 desc: "マインクラフトの実況動画です。"
             }
-            */
         ];
 
         function createCardHTML(video, badgeText) {
@@ -528,7 +522,6 @@
             const defaultSections = document.getElementById('default-sections');
             if (!defaultSections) return;
 
-            // 動画がひとつも登録されていない場合
             if (allVideos.length === 0) {
                 defaultSections.innerHTML = `
                     <h2 class="section-title">動画一覧</h2>
@@ -539,7 +532,6 @@
                 return;
             }
 
-            // 動画が存在する場合（自動構築）
             const categories = [...new Set(allVideos.map(v => v.category))];
             
             let html = `
@@ -556,14 +548,12 @@
 
             defaultSections.innerHTML = html;
 
-            // おすすめ動画のレンダリング
             const recContainer = document.getElementById('recommended-container');
             if (recContainer) {
                 const recList = [...allVideos].sort(() => 0.5 - Math.random()).slice(0, 2);
                 recContainer.innerHTML = recList.map(v => createCardHTML(v, 'おすすめ')).join('');
             }
 
-            // カテゴリ別動画のレンダリング
             categories.forEach((cat, index) => {
                 const container = document.getElementById(`cat-container-${index}`);
                 if (container) {
